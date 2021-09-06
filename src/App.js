@@ -9,12 +9,7 @@ export default function GoogleButton({ onSocial }){
     
         const { googleId, profileObj : { email, name } } = response;
         
-        await onSocial({
-            socialId : googleId,
-            socialType : 'google',
-            email,
-            nickname : name
-        });
+        console.log(googleId);
     }
 
     const onFailure = (error) => {
