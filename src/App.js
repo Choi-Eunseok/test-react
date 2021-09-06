@@ -25,7 +25,7 @@ export default function GoogleButton({ onSocial }){
         <div>
             <GoogleLogin
                 clientId={clientId}
-                responseType={"id_token"}
+                responseType={"166869073113-knmv18fvlmn90nej8bl034n40dkndl8b.apps.googleusercontent.com"}
                 onSuccess={onSuccess}
                 onFailure={onFailure}/>
         </div>
