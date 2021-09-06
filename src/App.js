@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
-const clientId = "OAuth Web Client ID";
+const clientId = "166869073113-knmv18fvlmn90nej8bl034n40dkndl8b.apps.googleusercontent.com";
 
 export default function GoogleButton({ onSocial }){
     const onSuccess = async(response) => {
@@ -20,7 +20,7 @@ export default function GoogleButton({ onSocial }){
         <div>
             <GoogleLogin
                 clientId={clientId}
-                responseType={"166869073113-knmv18fvlmn90nej8bl034n40dkndl8b.apps.googleusercontent.com"}
+                responseType={"id_token"}
                 onSuccess={onSuccess}
                 onFailure={onFailure}/>
         </div>
