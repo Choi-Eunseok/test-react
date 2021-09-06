@@ -1,7 +1,7 @@
 import React from 'react';
 import GoogleLogin from 'react-google-login';
 
-const clientId = "166869073113-knmv18fvlmn90nej8bl034n40dkndl8b.apps.googleusercontent.com";
+const clientId = "923935736935-adsccgburpt4msi1h0g0ag0h7fab6v3h.apps.googleusercontent.com";
 
 export default function GoogleButton(){
     const onSuccess = async(response) => {
