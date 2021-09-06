@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import GoogleLogin from 'react-google-login';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+const clientId = "OAuth Web Client ID";
+
+export default function GoogleButton({ onSocial }){
+    const onSuccess = async(response) => {
+    	console.log(response);
+    
+        const { googleId, profileObj : { email, name } } = response;
+        
+        await onSocial({
+            socialId : googleId,
+            socialType : 'google',
+            email,
+            nickname : name
+        });
+    }
+
+    const onFailure = (error) => {
+        console.log(error);
+    }
+
+    return(
+        <div>
+            <GoogleLogin
+                clientId={clientId}
+                responseType={"id_token"}
+                onSuccess={onSuccess}
+                onFailure={onFailure}/>
+        </div>
+    )
 }
-
-export default App;
